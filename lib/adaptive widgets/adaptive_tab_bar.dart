@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_convertor/screens/models/screen_models.dart';
 import 'package:provider/provider.dart';
 
 import '../screens/person_add_tab/view/person_add_screen.dart';
@@ -13,6 +14,9 @@ class AdaptiveTabBar extends StatelessWidget {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? TabBarView(children: [
             PersonAddTab(),
+            PersonAddTab(),
+            PersonAddTab(),
+            PersonAddTab(),
           ])
         : CupertinoTabScaffold(
             tabBar: CupertinoTabBar(items: [
@@ -25,7 +29,7 @@ class AdaptiveTabBar extends StatelessWidget {
               BottomNavigationBarItem(
                   icon: Icon(CupertinoIcons.settings), label: "Settings"),
             ]),
-            tabBuilder: (context, index) => Text("hi"),
+            tabBuilder: (context, index) => screenList[index].screen,
           );
   }
 }

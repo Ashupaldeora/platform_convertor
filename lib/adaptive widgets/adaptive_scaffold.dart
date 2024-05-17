@@ -25,7 +25,7 @@ class AdaptiveScaffold extends StatelessWidget {
             child: body,
             navigationBar: CupertinoNavigationBar(
               border: null,
-              backgroundColor: CupertinoColors.white,
+              backgroundColor: CupertinoColors.systemGrey6,
               middle: Text("Platform Convertor"),
               trailing: CupertinoSwitch(
                 onChanged: (value) {

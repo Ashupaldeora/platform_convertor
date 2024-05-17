@@ -13,10 +13,12 @@ class AdaptiveApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return (!Provider.of<SwitchProvider>(context).isAndroid)
         ? CupertinoApp(
+            theme: CupertinoThemeData(brightness: Brightness.light),
             home: scaffold,
             debugShowCheckedModeBanner: false,
           )
         : MaterialApp(
+            themeMode: ThemeMode.light,
             home: scaffold,
             debugShowCheckedModeBanner: false,
           );
