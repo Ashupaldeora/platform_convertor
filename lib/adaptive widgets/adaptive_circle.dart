@@ -9,19 +9,20 @@ import 'package:provider/provider.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveCircleAvatar extends StatelessWidget {
-  const AdaptiveCircleAvatar({super.key});
+  AdaptiveCircleAvatar({super.key, this.radius = 60, this.height, this.width});
+  double? radius, height, width;
 
   @override
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? InkWell(
-            radius: 60,
+            radius: radius,
             onTap: () {
               Provider.of<PersonAddProvider>(context, listen: false)
                   .pickImage();
             },
             child: CircleAvatar(
-                radius: 60,
+                radius: radius,
                 child: Provider.of<PersonAddProvider>(context).imgpath == null
                     ? Icon(Icons.add_a_photo_outlined)
                     : null,
@@ -38,8 +39,8 @@ class AdaptiveCircleAvatar extends StatelessWidget {
             },
             child: ClipOval(
               child: Container(
-                height: 120,
-                width: 120,
+                height: height,
+                width: width,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     color: CupertinoColors.activeBlue,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:platform_convertor/screens/models/screen_models.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/chat_screen/chat_tab.dart';
 import '../screens/person_add_tab/view/person_add_screen.dart';
 import '../utils/global provider/switch_provider.dart';
 
@@ -14,7 +15,7 @@ class AdaptiveTabBar extends StatelessWidget {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? TabBarView(children: [
             PersonAddTab(),
-            PersonAddTab(),
+            ChatTab(),
             PersonAddTab(),
             PersonAddTab(),
           ])

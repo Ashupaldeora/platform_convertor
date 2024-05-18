@@ -10,9 +10,9 @@ import '../../../adaptive widgets/adaptive_save_button.dart';
 import '../../../utils/global provider/switch_provider.dart';
 import 'components/person_add_textfield.dart';
 
-TextEditingController txtFullName = TextEditingController();
-TextEditingController txtPhoneNumber = TextEditingController();
-TextEditingController txtChatConversation = TextEditingController();
+TextEditingController? txtFullName = TextEditingController();
+TextEditingController? txtPhoneNumber = TextEditingController();
+TextEditingController? txtChatConversation = TextEditingController();
 
 class PersonAddTab extends StatelessWidget {
   const PersonAddTab({super.key});

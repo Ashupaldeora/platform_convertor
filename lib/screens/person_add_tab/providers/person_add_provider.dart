@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:platform_convertor/screens/person_add_tab/view/person_add_screen.dart';
 
 class PersonAddProvider extends ChangeNotifier {
   DateTime? dateTime;
@@ -22,6 +23,13 @@ class PersonAddProvider extends ChangeNotifier {
   Future<void> pickImage() async {
     XFile? image = await _imagePicker.pickImage(source: ImageSource.camera);
     imgpath = File(image!.path);
+    notifyListeners();
+  }
+
+  void clearController() {
+    txtPhoneNumber!.clear();
+    txtFullName!.clear();
+    txtChatConversation!.clear();
     notifyListeners();
   }
 }

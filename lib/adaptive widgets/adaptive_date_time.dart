@@ -22,9 +22,10 @@ class AdaptiveDateTime extends StatelessWidget {
                   TextButton(
                       onPressed: () async {
                         providerFalse.setDate(await showDatePicker(
-                            context: context,
-                            firstDate: DateTime(1924),
-                            lastDate: DateTime(2025)));
+                                context: context,
+                                firstDate: DateTime(1924),
+                                lastDate: DateTime(2025)) ??
+                            DateTime.now());
                       },
                       child: Text(
                         providerTrue.dateTime == null
@@ -40,7 +41,9 @@ class AdaptiveDateTime extends StatelessWidget {
                   TextButton(
                       onPressed: () async {
                         providerFalse.setTime(await showTimePicker(
-                            context: context, initialTime: TimeOfDay.now()));
+                                context: context,
+                                initialTime: TimeOfDay.now()) ??
+                            TimeOfDay.now());
                       },
                       child: Text(
                           providerTrue.timeOfDay == null

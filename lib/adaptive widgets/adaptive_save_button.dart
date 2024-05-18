@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_convertor/screens/chat_screen/providers/chat_provider.dart';
+import 'package:platform_convertor/screens/person_add_tab/view/person_add_screen.dart';
+import 'package:platform_convertor/utils/global%20provider/person_data_model.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/person_add_tab/providers/person_add_provider.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveSaveButton extends StatelessWidget {
@@ -12,7 +16,26 @@ class AdaptiveSaveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
-        ? OutlinedButton(onPressed: () {}, child: Text("Save"))
+        ? OutlinedButton(
+            onPressed: () {
+              Provider.of<ChatProvider>(context, listen: false).addData(
+                  PersonDataModel(
+                      chatConversation: txtChatConversation?.text ?? "",
+                      name: txtFullName != null ? txtFullName!.text : "",
+                      phoneNumber: txtPhoneNumber != null
+                          ? txtPhoneNumber!.text
+                          : "",
+                      date:
+                          Provider.of<PersonAddProvider>(context, listen: false)
+                                  .dateTime ??
+                              DateTime.now(),
+                      timeOfDay:
+                          Provider.of<PersonAddProvider>(context, listen: false)
+                              .timeOfDay!));
+              Provider.of<PersonAddProvider>(context, listen: false)
+                  .clearController();
+            },
+            child: Text("Save"))
         : CupertinoButton(
             child: Container(
                 height: 45,
@@ -25,7 +48,26 @@ class AdaptiveSaveButton extends StatelessWidget {
                   "Save",
                   style: TextStyle(color: CupertinoColors.white),
                 )),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ChatProvider>(context, listen: false).addData(
+                  PersonDataModel(
+                      chatConversation:
+                          txtChatConversation !=
+                                  null
+                              ? txtChatConversation!.text
+                              : "",
+                      name: txtFullName != null ? txtFullName!.text : "",
+                      phoneNumber:
+                          txtPhoneNumber != null ? txtPhoneNumber!.text : "",
+                      date: Provider.of<PersonAddProvider>(context,
+                              listen: false)
+                          .dateTime!,
+                      timeOfDay:
+                          Provider.of<PersonAddProvider>(context, listen: false)
+                              .timeOfDay!));
+              Provider.of<PersonAddProvider>(context, listen: false)
+                  .clearController();
+            },
           );
   }
 }
