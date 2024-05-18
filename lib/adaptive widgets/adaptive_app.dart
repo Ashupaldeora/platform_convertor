@@ -19,6 +19,8 @@ class AdaptiveApp extends StatelessWidget {
           )
         : MaterialApp(
             themeMode: ThemeMode.light,
+            theme: ThemeData.light(),
+            darkTheme: ThemeData.dark(),
             home: scaffold,
             debugShowCheckedModeBanner: false,
           );

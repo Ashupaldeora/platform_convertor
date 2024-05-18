@@ -31,7 +31,8 @@ class AdaptiveSaveButton extends StatelessWidget {
                               DateTime.now(),
                       timeOfDay:
                           Provider.of<PersonAddProvider>(context, listen: false)
-                              .timeOfDay!));
+                                  .timeOfDay ??
+                              TimeOfDay.now()));
               Provider.of<PersonAddProvider>(context, listen: false)
                   .clearController();
             },
@@ -60,11 +61,13 @@ class AdaptiveSaveButton extends StatelessWidget {
                       phoneNumber:
                           txtPhoneNumber != null ? txtPhoneNumber!.text : "",
                       date: Provider.of<PersonAddProvider>(context,
-                              listen: false)
-                          .dateTime!,
+                                  listen: false)
+                              .dateTime ??
+                          DateTime.now(),
                       timeOfDay:
                           Provider.of<PersonAddProvider>(context, listen: false)
-                              .timeOfDay!));
+                                  .timeOfDay ??
+                              TimeOfDay.now()));
               Provider.of<PersonAddProvider>(context, listen: false)
                   .clearController();
             },

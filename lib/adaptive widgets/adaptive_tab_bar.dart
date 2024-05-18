@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:platform_convertor/screens/models/screen_models.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class AdaptiveTabBar extends StatelessWidget {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? TabBarView(children: [
             PersonAddTab(),
-            ChatTab(),
+            SingleChildScrollView(child: ChatTab()),
             PersonAddTab(),
             PersonAddTab(),
           ])
