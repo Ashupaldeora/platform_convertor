@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/global provider/switch_provider.dart';
+import '../../../utils/global provider/switch_provider.dart';
 
 AppBar appBar(SwitchProvider providerTrue, SwitchProvider providerFalse) {
   return AppBar(
     title: const Text("Platform Convertor"),
-    toolbarHeight: 60,
+    // toolbarHeight: 50,
     actions: [
       Switch(
         value: providerTrue.isAndroid,

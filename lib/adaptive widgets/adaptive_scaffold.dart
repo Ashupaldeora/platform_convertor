@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../screens/components/material_appBar.dart';
+import '../screens/main_screen/components/material_appBar.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveScaffold extends StatelessWidget {
@@ -17,11 +17,13 @@ class AdaptiveScaffold extends StatelessWidget {
         ? DefaultTabController(
             length: 4,
             child: Scaffold(
+              resizeToAvoidBottomInset: false,
               body: body,
               appBar: appBar(providerTrue, providerFalse),
             ),
           )
         : CupertinoPageScaffold(
+            resizeToAvoidBottomInset: false,
             child: body,
             navigationBar: CupertinoNavigationBar(
               border: null,
