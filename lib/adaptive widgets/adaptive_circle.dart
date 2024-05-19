@@ -9,7 +9,8 @@ import 'package:provider/provider.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveCircleAvatar extends StatelessWidget {
-  AdaptiveCircleAvatar({super.key, this.radius = 60, this.height, this.width});
+  AdaptiveCircleAvatar(
+      {super.key, this.radius = 60, this.height = 110, this.width = 110});
   double? radius, height, width;
 
   @override
@@ -44,9 +45,14 @@ class AdaptiveCircleAvatar extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     color: CupertinoColors.activeBlue,
-                    image: DecorationImage(
-                        image: FileImage(
-                            Provider.of<PersonAddProvider>(context).imgpath!))),
+                    image:
+                        Provider.of<PersonAddProvider>(context).imgpath != null
+                            ? DecorationImage(
+                                fit: BoxFit.cover,
+                                image: FileImage(
+                                    Provider.of<PersonAddProvider>(context)
+                                        .imgpath!))
+                            : null),
                 child: Provider.of<PersonAddProvider>(context).imgpath == null
                     ? Icon(
                         CupertinoIcons.camera,
