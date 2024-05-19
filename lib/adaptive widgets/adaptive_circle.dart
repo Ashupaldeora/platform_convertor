@@ -6,12 +6,20 @@ import 'package:image_picker/image_picker.dart';
 import 'package:platform_convertor/screens/person_add_tab/providers/person_add_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/chat_screen/providers/chat_provider.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveCircleAvatar extends StatelessWidget {
   AdaptiveCircleAvatar(
-      {super.key, this.radius = 60, this.height = 110, this.width = 110});
+      {super.key,
+      this.radius = 60,
+      this.height = 110,
+      this.width = 110,
+      this.isForChatAndCall = false,
+      this.index = 0});
   double? radius, height, width;
+  final bool isForChatAndCall;
+  int index;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +35,19 @@ class AdaptiveCircleAvatar extends StatelessWidget {
                 child: Provider.of<PersonAddProvider>(context).imgpath == null
                     ? Icon(Icons.add_a_photo_outlined)
                     : null,
-                backgroundImage:
-                    Provider.of<PersonAddProvider>(context).imgpath == null
+                backgroundImage: !isForChatAndCall
+                    ? Provider.of<PersonAddProvider>(context).imgpath == null
                         ? null
                         : FileImage(
-                            Provider.of<PersonAddProvider>(context).imgpath!)),
+                            Provider.of<PersonAddProvider>(context).imgpath!)
+                    : Provider.of<ChatProvider>(
+                              context,
+                            ).personData[index].imgPath !=
+                            null
+                        ? FileImage(Provider.of<ChatProvider>(
+                            context,
+                          ).personData[index].imgPath!)
+                        : null),
           )
         : CupertinoButton(
             onPressed: () {

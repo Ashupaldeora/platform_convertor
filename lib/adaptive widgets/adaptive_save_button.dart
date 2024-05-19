@@ -20,19 +20,24 @@ class AdaptiveSaveButton extends StatelessWidget {
             onPressed: () {
               Provider.of<ChatProvider>(context, listen: false).addData(
                   PersonDataModel(
+                      imgPath:
+                          Provider.of<PersonAddProvider>(context, listen: false)
+                                  .imgpath ??
+                              null,
                       chatConversation: txtChatConversation?.text ?? "",
                       name: txtFullName != null ? txtFullName!.text : "",
-                      phoneNumber: txtPhoneNumber != null
-                          ? txtPhoneNumber!.text
-                          : "",
-                      date:
-                          Provider.of<PersonAddProvider>(context, listen: false)
-                                  .dateTime ??
-                              DateTime.now(),
+                      phoneNumber:
+                          txtPhoneNumber != null ? txtPhoneNumber!.text : "",
+                      date: Provider.of<PersonAddProvider>(context,
+                                  listen: false)
+                              .dateTime ??
+                          DateTime.now(),
                       timeOfDay:
                           Provider.of<PersonAddProvider>(context, listen: false)
                                   .timeOfDay ??
                               TimeOfDay.now()));
+              Provider.of<PersonAddProvider>(context, listen: false).imgpath =
+                  null;
               Provider.of<PersonAddProvider>(context, listen: false)
                   .clearController();
             },
@@ -52,6 +57,10 @@ class AdaptiveSaveButton extends StatelessWidget {
             onPressed: () {
               Provider.of<ChatProvider>(context, listen: false).addData(
                   PersonDataModel(
+                      imgPath:
+                          Provider.of<
+                                  PersonAddProvider>(context, listen: false)
+                              .imgpath!,
                       chatConversation:
                           txtChatConversation !=
                                   null
@@ -68,6 +77,9 @@ class AdaptiveSaveButton extends StatelessWidget {
                           Provider.of<PersonAddProvider>(context, listen: false)
                                   .timeOfDay ??
                               TimeOfDay.now()));
+              Provider.of<PersonAddProvider>(context, listen: false).imgpath =
+                  null;
+
               Provider.of<PersonAddProvider>(context, listen: false)
                   .clearController();
             },

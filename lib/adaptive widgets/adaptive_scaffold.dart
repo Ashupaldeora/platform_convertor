@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_convertor/screens/chat_screen/providers/chat_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../screens/main_screen/components/material_appBar.dart';

@@ -4,8 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:platform_convertor/screens/models/screen_models.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/calls_screen_tab/view/calls_tab_screen.dart';
 import '../screens/chat_screen/chat_tab.dart';
 import '../screens/person_add_tab/view/person_add_screen.dart';
+import '../screens/settings_screen/settings_tab.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveTabBar extends StatelessWidget {
@@ -17,8 +19,8 @@ class AdaptiveTabBar extends StatelessWidget {
         ? TabBarView(children: [
             PersonAddTab(),
             SingleChildScrollView(child: ChatTab()),
-            PersonAddTab(),
-            PersonAddTab(),
+            CallsTab(),
+            SettingScreen(),
           ])
         : CupertinoTabScaffold(
             tabBar: CupertinoTabBar(items: [

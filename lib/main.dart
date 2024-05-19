@@ -3,6 +3,7 @@ import 'package:platform_convertor/adaptive%20widgets/adaptive_scaffold.dart';
 import 'package:platform_convertor/screens/chat_screen/providers/chat_provider.dart';
 import 'package:platform_convertor/screens/main_screen/main_screen.dart';
 import 'package:platform_convertor/screens/person_add_tab/providers/person_add_provider.dart';
+import 'package:platform_convertor/screens/settings_screen/providers/settings_provider.dart';
 import 'package:platform_convertor/utils/global%20provider/switch_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,9 @@ void main() {
     ),
     ChangeNotifierProvider(
       create: (context) => ChatProvider(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => ProfileProvider(),
     ),
   ], builder: (context, child) => PlatformConvertor()));
 }

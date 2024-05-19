@@ -8,6 +8,7 @@ import 'package:platform_convertor/screens/person_add_tab/view/person_add_screen
 class PersonAddProvider extends ChangeNotifier {
   DateTime? dateTime;
   TimeOfDay? timeOfDay;
+  Duration? duration;
   ImagePicker _imagePicker = ImagePicker();
   File? imgpath;
   void setDate(DateTime? dateTime) {
@@ -15,8 +16,14 @@ class PersonAddProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setTime(TimeOfDay? timeOfDay) {
+  void setTime({TimeOfDay? timeOfDay, Duration? duration}) {
     this.timeOfDay = timeOfDay;
+    this.duration = duration;
+    if (duration != null) {
+      final int hours = duration.inHours % 24;
+      final int minutes = duration.inMinutes % 60;
+      this.timeOfDay = TimeOfDay(hour: hours, minute: minutes);
+    }
     notifyListeners();
   }
 
