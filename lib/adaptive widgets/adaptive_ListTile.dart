@@ -70,61 +70,72 @@ class AdaptiveListTile extends StatelessWidget {
           )
         : Container(
             margin: EdgeInsets.symmetric(vertical: 10),
-            child: CupertinoListTile(
-              leadingSize: 50,
-              title: Text(providerTrue.personData[index].name.toString()),
-              subtitle: isForChat
-                  ? Text(providerTrue.personData[index].chatConversation
-                      .toString())
-                  : Text(providerTrue.personData[index].phoneNumber.toString()),
-              leading: Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: Provider.of<ChatProvider>(
+            child: GestureDetector(
+              onLongPress: () {
+                providerFalse.cupertinosheet(
+                    context, providerTrue, providerFalse, index);
+                Provider.of<PersonAddProvider>(context).clearController();
+              },
+              child: CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {},
+                child: CupertinoListTile(
+                  leadingSize: 50,
+                  title: Text(providerTrue.personData[index].name.toString()),
+                  subtitle: isForChat
+                      ? Text(providerTrue.personData[index].chatConversation
+                          .toString())
+                      : Text(providerTrue.personData[index].phoneNumber
+                          .toString()),
+                  leading: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        color: Provider.of<ChatProvider>(
+                                  context,
+                                ).personData[index].imgPath ==
+                                null
+                            ? CupertinoColors.activeBlue
+                            : null,
+                        shape: BoxShape.circle,
+                        image: Provider.of<ChatProvider>(
+                                  context,
+                                ).personData[index].imgPath !=
+                                null
+                            ? DecorationImage(
+                                fit: BoxFit.cover,
+                                image: FileImage(Provider.of<ChatProvider>(
+                                  context,
+                                ).personData[index].imgPath!))
+                            : null),
+                    child: Provider.of<ChatProvider>(
                               context,
                             ).personData[index].imgPath ==
                             null
-                        ? CupertinoColors.activeBlue
+                        ? Icon(
+                            CupertinoIcons.camera,
+                            color: CupertinoColors.white,
+                          )
                         : null,
-                    shape: BoxShape.circle,
-                    image: Provider.of<ChatProvider>(
-                              context,
-                            ).personData[index].imgPath !=
-                            null
-                        ? DecorationImage(
-                            fit: BoxFit.cover,
-                            image: FileImage(Provider.of<ChatProvider>(
-                              context,
-                            ).personData[index].imgPath!))
-                        : null),
-                child: Provider.of<ChatProvider>(
-                          context,
-                        ).personData[index].imgPath ==
-                        null
-                    ? Icon(
-                        CupertinoIcons.camera,
-                        color: CupertinoColors.white,
-                      )
-                    : null,
+                  ),
+                  trailing: isForChat
+                      ? Text(
+                          "${providerTrue.personData[index].date!.day.toString() + "-" + providerTrue.personData[index].date!.month.toString() + "-" + providerTrue.personData[index].date!.year.toString()}, ${providerTrue.personData[index].timeOfDay!.hour.toString() + ":" + providerTrue.personData[index].timeOfDay!.minute.toString()}",
+                          style: TextStyle(fontSize: 15),
+                        )
+                      : CupertinoButton(
+                          child: Icon(
+                            CupertinoIcons.phone,
+                            color: CupertinoColors.activeGreen,
+                          ),
+                          onPressed: () {
+                            Uri uri = Uri.parse(
+                                'tel: +91 ${providerTrue.personData[index].phoneNumber}');
+                            url.launchUrl(uri);
+                          },
+                        ),
+                ),
               ),
-              trailing: isForChat
-                  ? Text(
-                      "${providerTrue.personData[index].date!.day.toString() + "-" + providerTrue.personData[index].date!.month.toString() + "-" + providerTrue.personData[index].date!.year.toString()}, ${providerTrue.personData[index].timeOfDay!.hour.toString() + ":" + providerTrue.personData[index].timeOfDay!.minute.toString()}",
-                      style: TextStyle(fontSize: 15),
-                    )
-                  : CupertinoButton(
-                      child: Icon(
-                        CupertinoIcons.phone,
-                        color: CupertinoColors.activeGreen,
-                      ),
-                      onPressed: () {
-                        Uri uri = Uri.parse(
-                            'tel: +91 ${providerTrue.personData[index].phoneNumber}');
-                        url.launchUrl(uri);
-                      },
-                    ),
-              onTap: () {},
             ),
           );
   }

@@ -143,4 +143,115 @@ class ChatProvider extends ChangeNotifier {
       ),
     );
   }
+
+  void cupertinosheet(BuildContext context, ChatProvider providerTrue,
+      ChatProvider providerFalse, int index) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) => Container(
+        height: 300,
+        alignment: Alignment.center,
+        width: double.infinity,
+        color: Colors.white,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            CircleAvatar(
+              radius: 50,
+              child: Provider.of<ChatProvider>(
+                        context,
+                      ).personData[index].imgPath ==
+                      null
+                  ? Icon(Icons.add_a_photo_outlined)
+                  : null,
+              backgroundImage: Provider.of<ChatProvider>(
+                        context,
+                      ).personData[index].imgPath !=
+                      null
+                  ? FileImage(Provider.of<ChatProvider>(
+                      context,
+                    ).personData[index].imgPath!)
+                  : null,
+            ),
+            Text(
+              providerTrue.personData[index].name.toString(),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            ),
+            Text(
+              providerTrue.personData[index].chatConversation.toString(),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CupertinoButton(
+                    onPressed: () {
+                      providerFalse.updateControllerForEditing(
+                          providerFalse.personData[index].name!,
+                          providerFalse.personData[index].phoneNumber!,
+                          providerFalse.personData[index].chatConversation!);
+                      Navigator.pop(context);
+                      showCupertinoDialog(
+                        context: context,
+                        builder: (context) => CupertinoAlertDialog(
+                          title: Text("Edit Details"),
+                          content: Container(
+                            height: 270,
+                            width: 400,
+                            child: Column(
+                              children: [TextFieldPersonAdd()],
+                            ),
+                          ),
+                          actions: [
+                            CupertinoButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("Cancel")),
+                            CupertinoButton(
+                                onPressed: () {
+                                  providerFalse.updateData(
+                                      index,
+                                      PersonDataModel(
+                                          name: txtFullName?.text ?? "",
+                                          phoneNumber:
+                                              txtPhoneNumber?.text ?? "",
+                                          chatConversation:
+                                              txtChatConversation?.text ?? "",
+                                          timeOfDay: providerFalse
+                                              .personData[index].timeOfDay,
+                                          date: providerFalse
+                                              .personData[index].date,
+                                          imgPath: providerFalse
+                                              .personData[index].imgPath));
+                                  Navigator.pop(context);
+                                },
+                                child: Text("Save")),
+                          ],
+                        ),
+                      );
+                    },
+                    child: Icon(Icons.edit)),
+                CupertinoButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      providerFalse.deleteData(index);
+                    },
+                    child: Icon(Icons.delete))
+              ],
+            ),
+            CupertinoButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Cancel"))
+          ],
+        ),
+      ),
+    );
+  }
 }

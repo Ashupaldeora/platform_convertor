@@ -59,8 +59,9 @@ class AdaptiveSaveButton extends StatelessWidget {
                   PersonDataModel(
                       imgPath:
                           Provider.of<
-                                  PersonAddProvider>(context, listen: false)
-                              .imgpath!,
+                                      PersonAddProvider>(context, listen: false)
+                                  .imgpath ??
+                              null,
                       chatConversation:
                           txtChatConversation !=
                                   null
