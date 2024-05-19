@@ -46,7 +46,7 @@ class AdaptiveListTile extends StatelessWidget {
               subtitle: Text(
                   providerTrue.personData[index].chatConversation.toString()),
               leading: AdaptiveCircleAvatar(
-                radius: 35,
+                radius: 34,
                 height: 50,
                 width: 50,
               ),
