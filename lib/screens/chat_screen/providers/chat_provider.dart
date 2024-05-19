@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../utils/global provider/person_data_model.dart';
+import '../../person_add_tab/providers/person_add_provider.dart';
 import '../../person_add_tab/view/components/person_add_textfield.dart';
 import '../../person_add_tab/view/person_add_screen.dart';
 
@@ -117,6 +118,9 @@ class ChatProvider extends ChangeNotifier {
                                               .personData[index].date,
                                           imgPath: providerFalse
                                               .personData[index].imgPath));
+                                  Provider.of<PersonAddProvider>(context,
+                                          listen: false)
+                                      .clearController();
                                   Navigator.pop(context);
                                 },
                                 child: Text("Save")),
@@ -228,12 +232,16 @@ class ChatProvider extends ChangeNotifier {
                                               .personData[index].date,
                                           imgPath: providerFalse
                                               .personData[index].imgPath));
+                                  Provider.of<PersonAddProvider>(context,
+                                          listen: false)
+                                      .clearController();
                                   Navigator.pop(context);
                                 },
                                 child: Text("Save")),
                           ],
                         ),
                       );
+                      Provider.of<PersonAddProvider>(context).clearController();
                     },
                     child: Icon(Icons.edit)),
                 CupertinoButton(
