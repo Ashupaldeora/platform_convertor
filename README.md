@@ -31,32 +31,32 @@ The primary goal of the Platform Converter App is to educate and familiarize use
 
 
 <div align="center">
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/361ce2ae-a472-46e0-9775-083c8ab4f7c2" height=500px hspace=10>
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/cf4f247c-2ecc-490e-afc5-b001253831f2" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/361ce2ae-a472-46e0-9775-083c8ab4f7c2" height=500px >
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/cf4f247c-2ecc-490e-afc5-b001253831f2" height=500px>
   
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/09acd296-d339-4a76-ac75-ae9bda05c9f3" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/09acd296-d339-4a76-ac75-ae9bda05c9f3" height=500px >
 </div>
 
 <div align="center">
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/a43aecfa-417c-4c0c-9ec9-2613bd264e8b" height=500px hspace=10>
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/544648eb-60b2-4e04-9a7b-5a27ba4055f8" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/a43aecfa-417c-4c0c-9ec9-2613bd264e8b" height=500px >
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/544648eb-60b2-4e04-9a7b-5a27ba4055f8" height=500px >
   
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/8d9d1b64-b34d-4ca1-8cc5-86e3e183c5ec" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/8d9d1b64-b34d-4ca1-8cc5-86e3e183c5ec" height=500px>
 </div>
 
 <div align="center">
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/81069b6e-4f6f-42dc-a1e3-77f2d5bf2de4" height=500px hspace=10>
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/9dd98826-a891-4092-95c0-5dc6d95ed129" height=500px hspace=10>
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/d5cdec6b-0f98-4042-b1ce-da860f2bf941" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/81069b6e-4f6f-42dc-a1e3-77f2d5bf2de4" height=500px >
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/9dd98826-a891-4092-95c0-5dc6d95ed129" height=500px >
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/d5cdec6b-0f98-4042-b1ce-da860f2bf941" height=500px >
   
 
 </div>
 
 <div align="center">
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/ba0fdc3d-d4a0-46a3-9fd7-059f110fe8af" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/ba0fdc3d-d4a0-46a3-9fd7-059f110fe8af" height=500px >
   
   
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/5fe3cdf1-86ed-4147-bb79-6f14f487cb00" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/5fe3cdf1-86ed-4147-bb79-6f14f487cb00" height=500px >
   <video src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/6b6d29ff-b69a-48e1-89b6-339948559302
 "></video>
 </div>
