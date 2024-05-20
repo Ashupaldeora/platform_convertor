@@ -23,9 +23,9 @@ The primary goal of the Platform Converter App is to educate and familiarize use
 
 
 <div align="center">
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/d42493be-30d0-4506-9dcd-19ecdd2807c3" height=500px hspace=10>
-  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/42ef7e3d-96a3-4312-9713-40c3af8e62a8" height=500px hspace=10>
-    <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/23f8ee0c-5265-442a-ad90-a95c3b82b5c7" height=500px hspace=10>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/d42493be-30d0-4506-9dcd-19ecdd2807c3" height=500px hspace=5>
+  <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/42ef7e3d-96a3-4312-9713-40c3af8e62a8" height=500px hspace=5>
+    <img src="https://github.com/Ashupaldeora/platform_convertor/assets/143180848/23f8ee0c-5265-442a-ad90-a95c3b82b5c7" height=500px hspace=5>
 </div>
 
 
