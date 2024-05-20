@@ -20,20 +20,22 @@ class PersonAddTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-          AdaptiveCircleAvatar(),
-          SizedBox(
-            height: 30,
-          ),
-          TextFieldPersonAdd(),
-          AdaptiveDateTime(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [AdaptiveSaveButton()],
-          )
-        ],
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            AdaptiveCircleAvatar(),
+            SizedBox(
+              height: 30,
+            ),
+            TextFieldPersonAdd(),
+            AdaptiveDateTime(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [AdaptiveSaveButton()],
+            )
+          ],
+        ),
       ),
     );
   }

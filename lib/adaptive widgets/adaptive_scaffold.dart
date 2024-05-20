@@ -4,6 +4,7 @@ import 'package:platform_convertor/screens/chat_screen/providers/chat_provider.d
 import 'package:provider/provider.dart';
 
 import '../screens/main_screen/components/material_appBar.dart';
+import '../screens/models/screen_models.dart';
 import '../utils/global provider/switch_provider.dart';
 
 class AdaptiveScaffold extends StatelessWidget {
@@ -23,18 +24,30 @@ class AdaptiveScaffold extends StatelessWidget {
               appBar: appBar(providerTrue, providerFalse),
             ),
           )
-        : CupertinoPageScaffold(
-            resizeToAvoidBottomInset: false,
-            child: body,
-            navigationBar: CupertinoNavigationBar(
-              border: null,
-              backgroundColor: CupertinoColors.systemGrey6,
-              middle: Text("Platform Convertor"),
-              trailing: CupertinoSwitch(
-                onChanged: (value) {
-                  providerFalse.changePlatform(value);
-                },
-                value: providerTrue.isAndroid,
+        : CupertinoTabScaffold(
+            tabBar: CupertinoTabBar(items: [
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.chat_bubble_text_fill),
+                  label: "Chats"),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.phone), label: "Calls"),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.settings), label: "Settings"),
+            ]),
+            tabBuilder: (context, index) => CupertinoPageScaffold(
+              resizeToAvoidBottomInset: true,
+              child: screenList[index].screen,
+              navigationBar: CupertinoNavigationBar(
+                border: null,
+                backgroundColor: CupertinoColors.systemGrey6,
+                middle: Text("Platform Convertor"),
+                trailing: CupertinoSwitch(
+                  onChanged: (value) {
+                    providerFalse.changePlatform(value);
+                  },
+                  value: providerTrue.isAndroid,
+                ),
               ),
             ),
           );

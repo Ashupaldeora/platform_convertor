@@ -24,6 +24,8 @@ class ThemeModeScreen extends StatelessWidget {
               value: profileProvidertrue.isdark,
               onChanged: (value) {
                 profileProviderfalse.changeColor(value);
+                profileProviderfalse.setValues();
+                profileProviderfalse.getValues();
               },
             ),
           )
@@ -35,6 +37,9 @@ class ThemeModeScreen extends StatelessWidget {
               value: profileProvidertrue.isdark,
               onChanged: (value) {
                 profileProviderfalse.changeColor(value);
+                profileProviderfalse.setValues();
+
+                profileProviderfalse.getValues();
               },
             ));
   }

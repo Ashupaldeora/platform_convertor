@@ -61,7 +61,11 @@ class AdaptiveDateTime extends StatelessWidget {
               Row(
                 children: [
                   Icon(CupertinoIcons.calendar),
+                  SizedBox(
+                    width: 15,
+                  ),
                   CupertinoButton(
+                    padding: EdgeInsets.zero,
                     child: Text(
                         providerTrue.dateTime == null
                             ? "Pick Date"
@@ -72,7 +76,8 @@ class AdaptiveDateTime extends StatelessWidget {
                         context: context,
                         builder: (context) => Container(
                           height: 200,
-                          color: CupertinoColors.white,
+                          color: CupertinoTheme.of(context)
+                              .primaryContrastingColor,
                           child: CupertinoDatePicker(
                             onDateTimeChanged: (value) {
                               providerFalse.setDate(value);
@@ -87,7 +92,11 @@ class AdaptiveDateTime extends StatelessWidget {
               Row(
                 children: [
                   Icon(CupertinoIcons.time),
+                  SizedBox(
+                    width: 15,
+                  ),
                   CupertinoButton(
+                    padding: EdgeInsets.zero,
                     child: Text(
                       providerTrue.timeOfDay == null
                           ? "Pick Time"
@@ -99,7 +108,8 @@ class AdaptiveDateTime extends StatelessWidget {
                         context: context,
                         builder: (context) => Container(
                           height: 200,
-                          color: CupertinoColors.white,
+                          color: CupertinoTheme.of(context)
+                              .primaryContrastingColor,
                           child: CupertinoTimerPicker(
                             onTimerDurationChanged: (value) {
                               providerFalse.setTime(duration: value);

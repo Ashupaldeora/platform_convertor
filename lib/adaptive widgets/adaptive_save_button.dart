@@ -43,6 +43,7 @@ class AdaptiveSaveButton extends StatelessWidget {
             },
             child: Text("Save"))
         : CupertinoButton(
+            padding: EdgeInsets.zero,
             child: Container(
                 height: 45,
                 width: 100,

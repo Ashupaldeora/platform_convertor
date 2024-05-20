@@ -22,18 +22,6 @@ class AdaptiveTabBar extends StatelessWidget {
             CallsTab(),
             SettingScreen(),
           ])
-        : CupertinoTabScaffold(
-            tabBar: CupertinoTabBar(items: [
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.chat_bubble_text_fill),
-                  label: "Chats"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.phone), label: "Calls"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.settings), label: "Settings"),
-            ]),
-            tabBuilder: (context, index) => screenList[index].screen,
-          );
+        : Container();
   }
 }

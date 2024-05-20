@@ -37,6 +37,9 @@ class PersonAddProvider extends ChangeNotifier {
     txtPhoneNumber!.clear();
     txtFullName!.clear();
     txtChatConversation!.clear();
+    timeOfDay = null;
+    duration = null;
+    dateTime = null;
     notifyListeners();
   }
 }

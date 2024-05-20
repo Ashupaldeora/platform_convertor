@@ -41,12 +41,12 @@ class ProfileAdaptive extends StatelessWidget {
                               onTap: () {
                                 profileProviderfalse.profileImage();
                               },
-                              child: (profileProvidertrue.profileimgpath !=
+                              child: (profileProvidertrue.profileImgPath !=
                                       null)
                                   ? CircleAvatar(
                                       radius: 60,
                                       backgroundImage: FileImage(
-                                          profileProvidertrue.profileimgpath!))
+                                          profileProvidertrue.profileImgPath!))
                                   : CircleAvatar(
                                       radius: 60,
                                       child: Icon(Icons.add_a_photo_outlined),
@@ -56,14 +56,16 @@ class ProfileAdaptive extends StatelessWidget {
                               height: 20,
                             ),
                             TextFormField(
-                              decoration: InputDecoration.collapsed(
+                              controller: profileProvidertrue.txtfullname,
+                              decoration: InputDecoration(
                                   hintText: 'Enter your Name...'),
                             ),
                             SizedBox(
-                              height: 40,
+                              height: 20,
                             ),
                             TextFormField(
-                                decoration: InputDecoration.collapsed(
+                                controller: profileProvidertrue.txtbio,
+                                decoration: InputDecoration(
                                     hintText: 'Enter your Bio..')),
                             SizedBox(
                               height: 30,
@@ -72,12 +74,12 @@ class ProfileAdaptive extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text('Save')),
+                                    onPressed: () {}, child: Text('Save')),
                                 ElevatedButton(
-                                    onPressed: () {}, child: Text('Clear')),
+                                    onPressed: () {
+                                      profileProviderfalse.clearprofile();
+                                    },
+                                    child: Text('Clear')),
                               ],
                             )
                           ],
@@ -94,13 +96,13 @@ class ProfileAdaptive extends StatelessWidget {
                 title: Text('Profile'),
                 subtitle: Text('Update Profile Data'),
                 trailing: CupertinoSwitch(
-                  value: profileProvidertrue!.isProfile,
+                  value: profileProvidertrue.isProfile,
                   onChanged: (value) {
-                    profileProviderfalse!.profileshow(value);
+                    profileProviderfalse.profileshow(value);
                   },
                 ),
               ),
-              (profileProvidertrue!.isProfile)
+              (profileProvidertrue.isProfile)
                   ? Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 10),
@@ -110,14 +112,14 @@ class ProfileAdaptive extends StatelessWidget {
                           children: [
                             CupertinoButton(
                               onPressed: () {
-                                profileProviderfalse!.profileImage();
+                                profileProviderfalse.profileImage();
                               },
-                              child: (profileProvidertrue!.profileimgpath !=
+                              child: (profileProvidertrue.profileImgPath !=
                                       null)
                                   ? CircleAvatar(
                                       radius: 60,
                                       backgroundImage: FileImage(
-                                          profileProvidertrue!.profileimgpath!))
+                                          profileProvidertrue.profileImgPath!))
                                   : CircleAvatar(
                                       radius: 60,
                                       backgroundColor:
@@ -132,6 +134,7 @@ class ProfileAdaptive extends StatelessWidget {
                               height: 20,
                             ),
                             CupertinoTextField(
+                              controller: profileProvidertrue.txtfullname,
                               padding: EdgeInsets.all(10),
                               placeholder: 'Enter Your Name..',
                               decoration: BoxDecoration(
@@ -142,6 +145,7 @@ class ProfileAdaptive extends StatelessWidget {
                               height: 20,
                             ),
                             CupertinoTextField(
+                              controller: profileProvidertrue.txtbio,
                               padding: EdgeInsets.all(10),
                               placeholder: 'Enter Your Bio..',
                               decoration: BoxDecoration(

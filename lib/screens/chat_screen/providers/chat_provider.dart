@@ -42,7 +42,7 @@ class ChatProvider extends ChangeNotifier {
         height: 300,
         alignment: Alignment.center,
         width: double.infinity,
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: Column(
           children: [
             SizedBox(
@@ -156,7 +156,7 @@ class ChatProvider extends ChangeNotifier {
         height: 300,
         alignment: Alignment.center,
         width: double.infinity,
-        color: Colors.white,
+        color: CupertinoTheme.of(context).primaryContrastingColor,
         child: Column(
           children: [
             SizedBox(

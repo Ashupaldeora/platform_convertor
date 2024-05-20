@@ -21,6 +21,8 @@ class AdaptiveApp extends StatelessWidget {
                 ? CupertinoThemeData(brightness: Brightness.light)
                 : CupertinoThemeData(
                     brightness: Brightness.dark,
+
+                    // barBackgroundColor: CupertinoColors.black,
                     textTheme: CupertinoTextThemeData(
                         textStyle: TextStyle(color: CupertinoColors.white))),
             home: scaffold,
@@ -29,8 +31,14 @@ class AdaptiveApp extends StatelessWidget {
         : MaterialApp(
             theme: ThemeData.light(),
             darkTheme: ThemeData.dark().copyWith(
-                textTheme:
-                    TextTheme(bodySmall: TextStyle(color: Colors.white))),
+              cardColor: Colors.black38,
+              textTheme: TextTheme(
+                  bodySmall: TextStyle(color: Colors.white),
+                  bodyLarge: TextStyle(
+                    color: Colors.white,
+                    // fontSize: 25,
+                  )),
+            ),
             themeMode:
                 !profileProvidertrue.isdark ? ThemeMode.light : ThemeMode.dark,
             home: scaffold,
